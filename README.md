@@ -1,74 +1,179 @@
 <div align="center">
 
-# 안녕하세요! 👋
+![header](https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:58a6ff&height=230&section=header&text=Byeongmin%20Kim&fontColor=58a6ff&fontSize=50&fontAlignY=35&desc=Fullstack%20Developer%20%7C%20Semiconductor%20Test%20Systems&descAlignY=55&descSize=18&descColor=8b949e&animation=fadeIn)
 
-**Fullstack Developer** · 반도체 테스트 데이터 처리 시스템 개발
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=600&height=100&lines=%F0%9F%8F%AD+Building+Real-time+Semiconductor+Data+Pipelines;%E2%9A%A1+Spring+Boot+%2B+Kafka+%2B+Flink+%2B+React;%F0%9F%94%A7+Turning+Raw+Test+Data+into+Insights" alt="Typing SVG" /></a>
 
-[![Blog](https://img.shields.io/badge/Blog-techversehome-FF5722?style=flat-square&logo=blogger&logoColor=white)](https://techversehome.blogspot.com/)
-[![GitHub](https://img.shields.io/badge/GitHub-byeongminkim0-181717?style=flat-square&logo=github)](https://github.com/byeongminkim0)
+<br/>
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fbyeongminkim0&count_bg=161b22&title_bg=0d1117&icon=github.svg&icon_color=58a6ff&title=visitors&edge_flat=true)](https://hits.seeyoufarm.com)
 
 </div>
 
----
+<br/>
 
-### 🛠️ Tech Stack
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-**Backend**
+<br/>
 
-![Java](https://img.shields.io/badge/Java_17-007396?style=flat-square&logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![Apache Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
-![Apache Flink](https://img.shields.io/badge/Flink-E6526F?style=flat-square&logo=apacheflink&logoColor=white)
+## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> About Me
 
-**Frontend**
+```javascript
+const byeongmin = {
+    role: "Fullstack Developer",
+    domain: "Semiconductor Test Data Processing",
+    code: ["Java 17", "TypeScript", "C++", "SQL"],
+    backend: ["Spring Boot", "Kafka", "Flink", "Flyway"],
+    frontend: ["React", "HTML5", "CSS3"],
+    database: ["PostgreSQL"],
+    infra: ["Docker", "n8n", "MCP"],
+    currentFocus: [
+        "🏭 STDF File Streaming Pipeline",
+        "📐 DUT Layout Visualization with KLayout",
+        "🔄 Distributed Log Analysis Orchestration",
+        "⚡ SQL Performance Tuning"
+    ],
+};
+```
 
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+<br/>
 
-**Database & Infra**
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Flyway](https://img.shields.io/badge/Flyway-CC0200?style=flat-square&logo=flyway&logoColor=white)
+<br/>
 
----
-
-### 💡 현재 관심사
-
-- 🏭 **반도체 테스트 데이터 처리** — STDF 파일 파싱 및 실시간 스트리밍 파이프라인 구축
-- 📊 **데이터 시각화** — React 기반 반도체 레이아웃 시각화 및 좌표 변환 시스템
-- 🔄 **워크플로우 자동화** — n8n, MCP를 활용한 분산 로그 분석 및 오케스트레이션
-- ⚡ **SQL 최적화** — PostgreSQL 쿼리 성능 튜닝 및 스칼라 서브쿼리 개선
-
----
-
-### 📌 주요 프로젝트
-
-| 프로젝트 | 설명 | 기술 |
-|---------|------|------|
-| **STDF Processing System** | 반도체 테스트 데이터 실시간 처리 파이프라인 | Spring Boot, Kafka, Flink, PostgreSQL |
-| **Layout Visualization** | KLayout 기반 DUT 터미널 좌표 시각화 | React, TypeScript, KLayout |
-| **Equipment Monitoring** | 장비 상태 모니터링 및 파일 동기화 시스템 | Spring Boot, Docker, FTP |
-| [**Wedding Invitation**](https://github.com/byeongminkim0/weddingInvitation.github.io) | 커스텀 애니메이션 모바일 청첩장 | React, TypeScript |
-
----
-
-### 📊 GitHub Stats
+## ⚡ Tech Arsenal
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=byeongminkim0&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
+### 〈 Backend 〉
+<br/>
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=byeongminkim0&layout=compact&theme=tokyonight&hide_border=true)
+<img src="https://skillicons.dev/icons?i=java,spring,kafka,docker&theme=dark" />
+
+<br/><br/>
+
+### 〈 Frontend 〉
+<br/>
+
+<img src="https://skillicons.dev/icons?i=react,ts,html,css&theme=dark" />
+
+<br/><br/>
+
+### 〈 Database & Tools 〉
+<br/>
+
+<img src="https://skillicons.dev/icons?i=postgres,git,github,vscode&theme=dark" />
 
 </div>
 
----
+<br/>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<br/>
+
+## 🏗️ What I Build
 
 <div align="center">
 
-*"지속적으로 배우고, 더 나은 시스템을 만들어가는 개발자"*
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🏭 STDF Processing Pipeline
+실시간 반도체 테스트 데이터 스트리밍
+<br/><br/>
+`Spring Boot` `Kafka` `Flink` `PostgreSQL`
+<br/><br/>
+<img src="https://img.shields.io/badge/Status-In_Progress-58a6ff?style=for-the-badge&labelColor=0d1117"/>
+
+</td>
+<td width="50%" valign="top">
+
+### 📐 Layout Visualization
+KLayout 기반 DUT 터미널 좌표 시각화
+<br/><br/>
+`React` `TypeScript` `KLayout`
+<br/><br/>
+<img src="https://img.shields.io/badge/Status-In_Progress-58a6ff?style=for-the-badge&labelColor=0d1117"/>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🔄 Workflow Orchestration
+n8n + MCP 분산 로그 분석 시스템
+<br/><br/>
+`n8n` `MCP` `Docker`
+<br/><br/>
+<img src="https://img.shields.io/badge/Status-In_Progress-58a6ff?style=for-the-badge&labelColor=0d1117"/>
+
+</td>
+<td width="50%" valign="top">
+
+### 💒 Wedding Invitation
+커스텀 애니메이션 모바일 청첩장
+<br/><br/>
+`React` `TypeScript`
+<br/><br/>
+<a href="https://github.com/byeongminkim0/weddingInvitation.github.io"><img src="https://img.shields.io/badge/View_Repo-58a6ff?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117"/></a>
+
+</td>
+</tr>
+</table>
 
 </div>
+
+<br/>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<br/>
+
+## 📊 GitHub Analytics
+
+<div align="center">
+
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=byeongminkim0&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=8b949e&ring_color=58a6ff&count_private=true" />
+<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=byeongminkim0&theme=dark&hide_border=true&background=0d1117&stroke=161b22&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" />
+
+<br/><br/>
+
+<img width="60%" src="https://github-readme-activity-graph.vercel.app/graph?username=byeongminkim0&bg_color=0d1117&color=58a6ff&line=58a6ff&point=c9d1d9&area=true&area_color=161b22&hide_border=true&custom_title=Contribution%20Graph" />
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/byeongminkim0/byeongminkim0/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/byeongminkim0/byeongminkim0/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/byeongminkim0/byeongminkim0/output/github-snake-dark.svg" />
+</picture>
+
+</div>
+
+<br/>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<br/>
+
+<div align="center">
+
+### 📬 Connect
+
+<br/>
+
+[![Blog](https://img.shields.io/badge/Tech_Blog-FF5722?style=for-the-badge&logo=blogger&logoColor=white)](https://techversehome.blogspot.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/byeongminkim0)
+
+<br/><br/>
+
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" />
+
+</div>
+
+<br/>
+
+![footer](https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:58a6ff&height=120&section=footer)
