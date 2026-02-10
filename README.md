@@ -8,9 +8,9 @@
 
 <br/><br/>
 
-<img width="53%" src="https://github-readme-stats.vercel.app/api?username=byeongminkim0&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=8b949e&ring_color=58a6ff&count_private=true&hide_title=true&hide_rank=true" /><img width="47%" src="https://github-readme-streak-stats.herokuapp.com/?user=byeongminkim0&theme=dark&hide_border=true&background=0d1117&stroke=161b22&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" />
+<img width="53%" src="https://streak-stats.demolab.com?user=byeongminkim0&theme=dark&hide_border=true&background=0d1117&stroke=161b22&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" /><img width="47%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=byeongminkim0&theme=github_dark&utcOffset=9" />
 
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=byeongminkim0&bg_color=0d1117&color=58a6ff&line=58a6ff&point=c9d1d9&area=true&area_color=161b22&hide_border=true&height=220&custom_title=" />
+<img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=byeongminkim0&theme=github_dark" />
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/byeongminkim0/byeongminkim0/output/github-snake-dark.svg" />
