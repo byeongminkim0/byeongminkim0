@@ -6,7 +6,7 @@
 
 <br/>
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fbyeongminkim0&count_bg=161b22&title_bg=0d1117&icon=github.svg&icon_color=58a6ff&title=visitors&edge_flat=true)](https://hits.seeyoufarm.com)
+![Profile Views](https://komarev.com/ghpvc/?username=byeongminkim0&style=flat-square&color=58a6ff&label=Profile+Views)
 
 </div>
 
