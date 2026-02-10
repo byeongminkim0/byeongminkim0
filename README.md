@@ -1,6 +1,6 @@
 <div align="center">
 
-# 안녕하세요! 👋 김병민입니다
+# 안녕하세요! 👋
 
 **Fullstack Developer** · 반도체 테스트 데이터 처리 시스템 개발
 
