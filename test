@@ -1,425 +1,295 @@
 public static ArrayList<LayerCodeSave> parsingLyp(InputStream is) throws Exception {
-		ArrayList<LayerCodeSave> layerList = new ArrayList<>();
 
-		// XML 파서 생성
-		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-		Document doc = dBuilder.parse(is);
-		doc.getDocumentElement().normalize();
+    ArrayList<LayerCodeSave> layerList = new ArrayList<>();
 
-		// 모든 <properties> 요소 가져오기
-		NodeList nList = doc.getElementsByTagName("properties");
+    // XML 파서 생성
+    DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+    DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 
-		// 각 <properties> 요소 반복 처리
-		for (int i = 0; i < nList.getLength(); i++) {
-			Node nNode = nList.item(i);
+    Document doc = dBuilder.parse(is);
+    doc.getDocumentElement().normalize();
 
-			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-				Element elem = (Element) nNode;
+    // 모든 <properties> 요소 가져오기
+    NodeList nList = doc.getElementsByTagName("properties");
 
-				String lyr_cd;
-				String lyr_cd_nm;
+    // 각 <properties> 요소 반복 처리
+    for (int i = 0; i < nList.getLength(); i++) {
 
-				// <name> 태그에서 앞부분 추출 (예: "PWELL")
-				String name = elem.getElementsByTagName("name").item(0).getTextContent();
-				String[] nameParts = name.split(" - ");  // "PWELL.drawing"
-				String[] prefixs = nameParts[0].split("\\.");  // "PWELL.drawing"
-				lyr_cd_nm = prefixs[0];
+        Node nNode = nList.item(i);
 
-				// <source> 태그에서 숫자 부분 추출 및 변환
-				String source = nameParts[1];
-				String[] sourceParts = source.split("/");  // "/" 또는 "@"로 분리
+        if (nNode.getNodeType() != Node.ELEMENT_NODE) {
+            continue;
+        }
 
-				lyr_cd = sourceParts[0];  // "1/0@1" -> "1"
+        Element elem = (Element) nNode;
 
-				if (sourceParts.length > 1) {
-					if (!sourceParts[1].equals("0")){
-						lyr_cd += "_" + sourceParts[1];
-						lyr_cd_nm += "." + prefixs[1];
-					}
-				}
+        String lyr_cd;
+        String lyr_cd_nm;
+        int srt_sqn;
 
-				// 정렬 순서 번호 계산 (srt_sqn)
-				int srt_sqn = Integer.parseInt(sourceParts[0]) * 1000;
-				if (sourceParts.length > 1) {
-					srt_sqn += Integer.parseInt(sourceParts[1]);
-				}
+        // name 태그 확인
+        NodeList nameNodeList = elem.getElementsByTagName("name");
 
-				// LayerCodeSave 객체 생성 및 값 설정
-				LayerCodeSave layerMap = new LayerCodeSave();
-				layerMap.setLayerCode(lyr_cd);
-				layerMap.setLayerName(lyr_cd_nm);
-				layerMap.setSortSequence(srt_sqn);
+        if (nameNodeList.getLength() == 0) {
+            continue;
+        }
 
-				// 리스트에 추가
-				layerList.add(layerMap);
-			}
-		}
-
-		return layerList;
-	}
+        String name = nameNodeList.item(0)
+                .getTextContent()
+                .trim();
 
 
+        /*
+         * ============================================================
+         * 기존 LYP 형식
+         *
+         * 예)
+         *
+         * <name>PWELL.drawing - 1/0</name>
+         *
+         * 또는
+         *
+         * <name>METAL.pin - 10/5</name>
+         *
+         * ============================================================
+         */
+        if (name.contains(" - ")) {
+
+            String[] nameParts = name.split("\\s+-\\s+", 2);
+
+            // 예상하지 못한 데이터는 건너뜀
+            if (nameParts.length < 2) {
+                continue;
+            }
+
+            /*
+             * PWELL.drawing
+             *
+             * prefixs[0] = PWELL
+             * prefixs[1] = drawing
+             */
+            String[] prefixs = nameParts[0].split("\\.", 2);
+
+            lyr_cd_nm = prefixs[0];
+
+            /*
+             * 1/0
+             * 10/5
+             */
+            String source = nameParts[1].trim();
+
+            /*
+             * 혹시 기존 파일에도
+             *
+             * 1/0@1
+             *
+             * 같은 값이 들어오는 경우를 대비해서
+             * @ 뒤는 제거
+             */
+            int atIndex = source.indexOf("@");
+
+            if (atIndex >= 0) {
+                source = source.substring(0, atIndex);
+            }
+
+            String[] sourceParts = source.split("/", 2);
+
+            int layer = Integer.parseInt(sourceParts[0].trim());
+
+            int datatype = 0;
+
+            if (sourceParts.length > 1
+                    && !sourceParts[1].trim().isEmpty()) {
+
+                datatype = Integer.parseInt(
+                        sourceParts[1].trim()
+                );
+            }
+
+            /*
+             * layer code
+             *
+             * 1/0  -> 1
+             * 10/5 -> 10_5
+             */
+            lyr_cd = String.valueOf(layer);
+
+            if (datatype != 0) {
+
+                lyr_cd += "_" + datatype;
+
+                /*
+                 * 기존 로직 유지
+                 *
+                 * datatype != 0 이고
+                 * PWELL.drawing 처럼 "." 뒤 값이 존재할 경우
+                 *
+                 * layerName = PWELL.drawing
+                 */
+                if (prefixs.length > 1) {
+                    lyr_cd_nm += "." + prefixs[1];
+                }
+            }
+
+            /*
+             * 정렬 순서
+             *
+             * 1/0  -> 1000
+             * 10/5 -> 10005
+             */
+            srt_sqn = layer * 1000 + datatype;
 
 
-<?xml version="1.0" encoding="utf-8"?>
-<layer-properties>
- <properties>
-  <frame-color>#ff80a8</frame-color>
-  <fill-color>#ff80a8</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>1/0@PGAN</name>
-  <source>1/0@1</source>
- </properties>
- <properties>
-  <frame-color>#c080ff</frame-color>
-  <fill-color>#c080ff</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>2/0@ISO</name>
-  <source>2/0@1</source>
- </properties>
- <properties>
-  <frame-color>#8086ff</frame-color>
-  <fill-color>#8086ff</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>4/0@DGATE_CONT</name>
-  <source>4/0@1</source>
- </properties>
- <properties>
-  <frame-color>#80a8ff</frame-color>
-  <fill-color>#80a8ff</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>5/0@GATE_CONT</name>
-  <source>5/0@1</source>
- </properties>
- <properties>
-  <frame-color>#ff0000</frame-color>
-  <fill-color>#ff0000</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>6/0@GATE_METAL</name>
-  <source>6/0@1</source>
- </properties>
- <properties>
-  <frame-color>#ff0080</frame-color>
-  <fill-color>#ff0080</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>7/0@FP</name>
-  <source>7/0@1</source>
- </properties>
- <properties>
-  <frame-color>#ff00ff</frame-color>
-  <fill-color>#ff00ff</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>8/0@FPB</name>
-  <source>8/0@1</source>
- </properties>
- <properties>
-  <frame-color>#8000ff</frame-color>
-  <fill-color>#8000ff</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>9/0@M1C</name>
-  <source>9/0@1</source>
- </properties>
- <properties>
-  <frame-color>#0000ff</frame-color>
-  <fill-color>#0000ff</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>10/0@M1</name>
-  <source>10/0@1</source>
- </properties>
- <properties>
-  <frame-color>#0080ff</frame-color>
-  <fill-color>#0080ff</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>11/0@M2C</name>
-  <source>11/0@1</source>
- </properties>
- <properties>
-  <frame-color>#800000</frame-color>
-  <fill-color>#800000</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>12/0@M2</name>
-  <source>12/0@1</source>
- </properties>
- <properties>
-  <frame-color>#800057</frame-color>
-  <fill-color>#800057</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>13/0@M3C</name>
-  <source>13/0@1</source>
- </properties>
- <properties>
-  <frame-color>#800080</frame-color>
-  <fill-color>#800080</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>14/0@M3</name>
-  <source>14/0@1</source>
- </properties>
- <properties>
-  <frame-color>#f3ff80</frame-color>
-  <fill-color>#f3ff80</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>21/0@TV</name>
-  <source>21/0@1</source>
- </properties>
- <properties>
-  <frame-color>#ffa080</frame-color>
-  <fill-color>#ffa080</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>23/0@OHMIC_CONT</name>
-  <source>23/0@1</source>
- </properties>
- <properties>
-  <frame-color>#00ffff</frame-color>
-  <fill-color>#00ffff</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>24/0@OHMIC_METAL</name>
-  <source>24/0@1</source>
- </properties>
- <properties>
-  <frame-color>#01ff6b</frame-color>
-  <fill-color>#01ff6b</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>25/0@PIQ</name>
-  <source>25/0@1</source>
- </properties>
- <properties>
-  <frame-color>#91ff00</frame-color>
-  <fill-color>#91ff00</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>26/0@FISO1</name>
-  <source>26/0@1</source>
- </properties>
- <properties>
-  <frame-color>#ddff00</frame-color>
-  <fill-color>#ddff00</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>27/0@FISO2</name>
-  <source>27/0@1</source>
- </properties>
- <properties>
-  <frame-color>#ddff00</frame-color>
-  <fill-color>#ddff00</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I5</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>63/0@BOUNDARY</name>
-  <source>63/0@1</source>
- </properties>
- <properties>
-  <frame-color>#0080ff</frame-color>
-  <fill-color>#0080ff</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I9</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>false</transparent>
-  <width/>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>119/0@KEY</name>
-  <source>119/0@1</source>
- </properties>
- <name/>
-</layer-properties>
+        /*
+         * ============================================================
+         * 새로운 LYP 형식
+         *
+         * 예)
+         *
+         * <name>1/0@PGAN</name>
+         * <source>1/0@1</source>
+         *
+         * <name>10/5@M1</name>
+         * <source>10/5@1</source>
+         *
+         * ============================================================
+         */
+        } else if (name.contains("@")) {
+
+            /*
+             * name
+             *
+             * 1/0@PGAN
+             *
+             * nameParts[0] = 1/0
+             * nameParts[1] = PGAN
+             */
+            String[] nameParts = name.split("@", 2);
+
+            if (nameParts.length < 2) {
+                continue;
+            }
+
+            lyr_cd_nm = nameParts[1].trim();
+
+
+            /*
+             * source 태그를 우선 사용
+             *
+             * <source>1/0@1</source>
+             */
+            String source;
+
+            NodeList sourceNodeList =
+                    elem.getElementsByTagName("source");
+
+            if (sourceNodeList.getLength() > 0) {
+
+                source = sourceNodeList.item(0)
+                        .getTextContent()
+                        .trim();
+
+            } else {
+
+                /*
+                 * source 태그가 없는 경우
+                 *
+                 * name의 @ 앞부분 사용
+                 *
+                 * 1/0@PGAN
+                 * -> 1/0
+                 */
+                source = nameParts[0].trim();
+            }
+
+
+            /*
+             * source가
+             *
+             * 1/0@1
+             *
+             * 형태라면 @ 뒤 제거
+             */
+            int sourceAtIndex = source.indexOf("@");
+
+            if (sourceAtIndex >= 0) {
+                source = source.substring(
+                        0,
+                        sourceAtIndex
+                );
+            }
+
+
+            /*
+             * 1/0
+             *
+             * sourceParts[0] = 1
+             * sourceParts[1] = 0
+             */
+            String[] sourceParts =
+                    source.split("/", 2);
+
+            int layer =
+                    Integer.parseInt(
+                            sourceParts[0].trim()
+                    );
+
+            int datatype = 0;
+
+            if (sourceParts.length > 1
+                    && !sourceParts[1].trim().isEmpty()) {
+
+                datatype =
+                        Integer.parseInt(
+                                sourceParts[1].trim()
+                        );
+            }
+
+
+            /*
+             * Layer Code
+             *
+             * 1/0  -> 1
+             * 10/5 -> 10_5
+             */
+            lyr_cd = String.valueOf(layer);
+
+            if (datatype != 0) {
+                lyr_cd += "_" + datatype;
+            }
+
+
+            /*
+             * 정렬 순서
+             */
+            srt_sqn = layer * 1000 + datatype;
+
+
+        } else {
+
+            /*
+             * 현재 알고 있는 두 형식이 아닌 경우
+             * 에러를 발생시키지 않고 건너뜀
+             */
+            continue;
+        }
+
+
+        /*
+         * ============================================================
+         * 결과 저장
+         * ============================================================
+         */
+
+        LayerCodeSave layerMap =
+                new LayerCodeSave();
+
+        layerMap.setLayerCode(lyr_cd);
+        layerMap.setLayerName(lyr_cd_nm);
+        layerMap.setSortSequence(srt_sqn);
+
+        layerList.add(layerMap);
+    }
+
+    return layerList;
+}
