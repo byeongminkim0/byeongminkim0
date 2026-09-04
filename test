@@ -1,295 +1,47 @@
-public static ArrayList<LayerCodeSave> parsingLyp(InputStream is) throws Exception {
-
-    ArrayList<LayerCodeSave> layerList = new ArrayList<>();
-
-    // XML 파서 생성
-    DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-    DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-
-    Document doc = dBuilder.parse(is);
-    doc.getDocumentElement().normalize();
-
-    // 모든 <properties> 요소 가져오기
-    NodeList nList = doc.getElementsByTagName("properties");
-
-    // 각 <properties> 요소 반복 처리
-    for (int i = 0; i < nList.getLength(); i++) {
-
-        Node nNode = nList.item(i);
-
-        if (nNode.getNodeType() != Node.ELEMENT_NODE) {
-            continue;
-        }
-
-        Element elem = (Element) nNode;
-
-        String lyr_cd;
-        String lyr_cd_nm;
-        int srt_sqn;
-
-        // name 태그 확인
-        NodeList nameNodeList = elem.getElementsByTagName("name");
-
-        if (nameNodeList.getLength() == 0) {
-            continue;
-        }
-
-        String name = nameNodeList.item(0)
-                .getTextContent()
-                .trim();
-
-
-        /*
-         * ============================================================
-         * 기존 LYP 형식
-         *
-         * 예)
-         *
-         * <name>PWELL.drawing - 1/0</name>
-         *
-         * 또는
-         *
-         * <name>METAL.pin - 10/5</name>
-         *
-         * ============================================================
-         */
-        if (name.contains(" - ")) {
-
-            String[] nameParts = name.split("\\s+-\\s+", 2);
-
-            // 예상하지 못한 데이터는 건너뜀
-            if (nameParts.length < 2) {
-                continue;
-            }
-
-            /*
-             * PWELL.drawing
-             *
-             * prefixs[0] = PWELL
-             * prefixs[1] = drawing
-             */
-            String[] prefixs = nameParts[0].split("\\.", 2);
-
-            lyr_cd_nm = prefixs[0];
-
-            /*
-             * 1/0
-             * 10/5
-             */
-            String source = nameParts[1].trim();
-
-            /*
-             * 혹시 기존 파일에도
-             *
-             * 1/0@1
-             *
-             * 같은 값이 들어오는 경우를 대비해서
-             * @ 뒤는 제거
-             */
-            int atIndex = source.indexOf("@");
-
-            if (atIndex >= 0) {
-                source = source.substring(0, atIndex);
-            }
-
-            String[] sourceParts = source.split("/", 2);
-
-            int layer = Integer.parseInt(sourceParts[0].trim());
-
-            int datatype = 0;
-
-            if (sourceParts.length > 1
-                    && !sourceParts[1].trim().isEmpty()) {
-
-                datatype = Integer.parseInt(
-                        sourceParts[1].trim()
-                );
-            }
-
-            /*
-             * layer code
-             *
-             * 1/0  -> 1
-             * 10/5 -> 10_5
-             */
-            lyr_cd = String.valueOf(layer);
-
-            if (datatype != 0) {
-
-                lyr_cd += "_" + datatype;
-
-                /*
-                 * 기존 로직 유지
-                 *
-                 * datatype != 0 이고
-                 * PWELL.drawing 처럼 "." 뒤 값이 존재할 경우
-                 *
-                 * layerName = PWELL.drawing
-                 */
-                if (prefixs.length > 1) {
-                    lyr_cd_nm += "." + prefixs[1];
-                }
-            }
-
-            /*
-             * 정렬 순서
-             *
-             * 1/0  -> 1000
-             * 10/5 -> 10005
-             */
-            srt_sqn = layer * 1000 + datatype;
-
-
-        /*
-         * ============================================================
-         * 새로운 LYP 형식
-         *
-         * 예)
-         *
-         * <name>1/0@PGAN</name>
-         * <source>1/0@1</source>
-         *
-         * <name>10/5@M1</name>
-         * <source>10/5@1</source>
-         *
-         * ============================================================
-         */
-        } else if (name.contains("@")) {
-
-            /*
-             * name
-             *
-             * 1/0@PGAN
-             *
-             * nameParts[0] = 1/0
-             * nameParts[1] = PGAN
-             */
-            String[] nameParts = name.split("@", 2);
-
-            if (nameParts.length < 2) {
-                continue;
-            }
-
-            lyr_cd_nm = nameParts[1].trim();
-
-
-            /*
-             * source 태그를 우선 사용
-             *
-             * <source>1/0@1</source>
-             */
-            String source;
-
-            NodeList sourceNodeList =
-                    elem.getElementsByTagName("source");
-
-            if (sourceNodeList.getLength() > 0) {
-
-                source = sourceNodeList.item(0)
-                        .getTextContent()
-                        .trim();
-
-            } else {
-
-                /*
-                 * source 태그가 없는 경우
-                 *
-                 * name의 @ 앞부분 사용
-                 *
-                 * 1/0@PGAN
-                 * -> 1/0
-                 */
-                source = nameParts[0].trim();
-            }
-
-
-            /*
-             * source가
-             *
-             * 1/0@1
-             *
-             * 형태라면 @ 뒤 제거
-             */
-            int sourceAtIndex = source.indexOf("@");
-
-            if (sourceAtIndex >= 0) {
-                source = source.substring(
-                        0,
-                        sourceAtIndex
-                );
-            }
-
-
-            /*
-             * 1/0
-             *
-             * sourceParts[0] = 1
-             * sourceParts[1] = 0
-             */
-            String[] sourceParts =
-                    source.split("/", 2);
-
-            int layer =
-                    Integer.parseInt(
-                            sourceParts[0].trim()
-                    );
-
-            int datatype = 0;
-
-            if (sourceParts.length > 1
-                    && !sourceParts[1].trim().isEmpty()) {
-
-                datatype =
-                        Integer.parseInt(
-                                sourceParts[1].trim()
-                        );
-            }
-
-
-            /*
-             * Layer Code
-             *
-             * 1/0  -> 1
-             * 10/5 -> 10_5
-             */
-            lyr_cd = String.valueOf(layer);
-
-            if (datatype != 0) {
-                lyr_cd += "_" + datatype;
-            }
-
-
-            /*
-             * 정렬 순서
-             */
-            srt_sqn = layer * 1000 + datatype;
-
-
-        } else {
-
-            /*
-             * 현재 알고 있는 두 형식이 아닌 경우
-             * 에러를 발생시키지 않고 건너뜀
-             */
-            continue;
-        }
-
-
-        /*
-         * ============================================================
-         * 결과 저장
-         * ============================================================
-         */
-
-        LayerCodeSave layerMap =
-                new LayerCodeSave();
-
-        layerMap.setLayerCode(lyr_cd);
-        layerMap.setLayerName(lyr_cd_nm);
-        layerMap.setSortSequence(srt_sqn);
-
-        layerList.add(layerMap);
-    }
-
-    return layerList;
-}
+Creating PCell...
+2026-09-04 09:33:11:desc_reader:[DEBUG]:[('M01', 'DIFF_35_W', '13.3', '02', 'A', '', 'N', 'Unit Width'), ('M08', 'n', '4', '07', 'H', '', 'N', 'Finger'), ('M32', 'iso_row', '1', '17', 'AC', '', 'N', 'ISO row'), ('M33', 'iso_col', '1', '16', 'AD', '', 'N', 'ISO col'), ('M34', 'psub_row', '1', '15', 'AE', '', 'N', 'PSUB row'), ('M35', 'psub_col', '1', '14', 'AF', '', 'N', 'PSUB col'), ('M36', 'NIMP_17_pick_up_DIFF_35', '12', '12', 'ZZ', '', 'N', 'Pick up')]
+2026-09-04 09:33:11:desc_reader:[DEBUG]:diffs : {'Box_DIFF_35': ['0.0', 0.0, '6.65 - 0.5*M01', 0.0]}
+2026-09-04 09:33:11:desc_reader:[DEBUG]:met1_dict : {'Box_MET1_12': ['-0.3', -0.3], 'Box_MET1_15': ['1.45', 1.45], 'Box_MET1_16': ['3.2', 3.2]}
+2026-09-04 09:33:11:desc_reader:[DEBUG]:met1_x2_dict : {'Box_MET1_12': ['0.9', 0.9], 'Box_MET1_15': ['2.65', 2.65], 'Box_MET1_16': ['4.4', 4.4]}
+2026-09-04 09:33:11:desc_reader:[DEBUG]:13.3 4.1
+2026-09-04 09:33:11:layout_reader:[DEBUG]:nch_ldmhs_lr_16v_M01_unitCell_AUTO
+2026-09-04 09:33:11:layout_reader:[DEBUG]:inst array
+2026-09-04 09:33:11:layout_reader:[DEBUG]:0,0 3500,0
+2026-09-04 09:33:11:desc_reader:[DEBUG]:MOS
+2026-09-04 09:33:11:desc_reader:[DEBUG]:finger_value: (3.2-(-0.3))
+2026-09-04 09:33:11:desc_reader:[DEBUG]:(3.2-(-0.3))
+2026-09-04 09:33:11:script_generator:[WARNING]:Layer 44 not found in DB, using default name: L44
+2026-09-04 09:33:11:script_generator:[WARNING]:Layer -1_-1 not found in DB, using default name: L-1.-1
+2026-09-04 09:33:11:script_generator:[DEBUG]:Polygon_NIMP_17 Component(type='Polygon', cell='01', layer='8', ref_comp=['Box_DIFF_35'], c1=('1.15', '4.97 - 0.5*M01'), c2=('2.95', '0.5*M01 + 8.33'), corner=0.0, hole_list=[['0.0', '1.65', '6.47 - 0.5*M01', '2.45', '1.025'], ['0.0', '1.65', '1.475', '2.45', '1.925'], ['0.0', '1.65', '2.375', '2.45', '2.825'], ['0.0', '1.65', '3.275', '2.45', '3.725'], ['0.0', '1.65', '4.175', '2.45', '4.625'], ['0.0', '1.65', '5.075', '2.45', '5.525'], ['0.0', '1.65', '5.975', '2.45', '6.425'], ['0.0', '1.65', '6.875', '2.45', '7.325'], ['0.0', '1.65', '7.775', '2.45', '8.225'], ['0.0', '1.65', '8.675', '2.45', '9.125'], ['0.0', '1.65', '9.575', '2.45', '10.025'], ['0.0', '1.65', '10.475', '2.45', '10.925'], ['0.0', '1.65', '11.375', '2.45', '11.825'], ['0.0', '1.65', '12.275', '2.45', '0.5*M01 + 6.83']])
+2026-09-04 09:33:11:pcell_creator:[DEBUG]:C:\Users\10008505\Desktop\TEPortal\kweb\src\kweb/lym/pcell_sample_python_modified.lym created
+2026-09-04 09:33:11:pcell_sample_python_modified:[DEBUG]:['9', '11', '155', '146', '112', '102', '100', '94', '47', '24', '10', '8', '7', '6', '3', '44', '134', '111', '105', '96', '40', '40', '23', '22', '12', '-1']
+2026-09-04 09:33:11:layout_server:[INFO]:[PCELL] Auto-created PCell for dvcNo=3194
+2026-09-04 09:33:11:layout_server:[DEBUG]:HEALTH_CHECK 전송 완료 (dvcNo=3194, pcell=False), xor=False
+2026-09-04 09:33:11:layout_server:[DEBUG]:현재 테마: dark
+2026-09-04 09:33:11:layout_server:[INFO]:[selected-shapes] payload=[]
+2026-09-04 09:33:11:layout_server:[DEBUG]:현재 테마: dark
+2026-09-04 09:33:11:layout_server:[INFO]:[selected-shapes] payload=[]
+2026-09-04 09:33:11:layout_server:[INFO]:[selected-shapes] payload=[]
+2026-09-04 09:33:11:layout_server:[INFO]:[selected-shapes] payload=[]
+2026-09-04 09:33:11:viewer:[DEBUG]:HTTP POST 수신: /draw-one-module
+2026-09-04 09:33:11:viewer:[DEBUG]:  - dvcNo: 3194
+2026-09-04 09:33:11:viewer:[DEBUG]:  - moduleId: 1
+asym_flag N
+2026-09-04 09:33:11:draw_module:[DEBUG]:라이브러리 찾음! <__main__.MyLib object at 0x000001895FF0F680>
+2026-09-04 09:33:11:draw_module:[DEBUG]:3194
+2026-09-04 09:33:11:draw_module:[DEBUG]:<class '__main__.MyLib'>
+2026-09-04 09:33:11:draw_module:[DEBUG]:<__main__.MyLib object at 0x000001895FF0F680>
+2026-09-04 09:33:11:draw_module:[DEBUG]:3197
+2026-09-04 09:33:11:draw_module:[DEBUG]:<class '__main__.MyLib'>
+2026-09-04 09:33:11:draw_module:[DEBUG]:<__main__.MyLib object at 0x000001895E692D50>
+2026-09-04 09:33:11:draw_module:[DEBUG]:3198
+2026-09-04 09:33:11:draw_module:[DEBUG]:<class '__main__.MyLib'>
+2026-09-04 09:33:11:draw_module:[DEBUG]:<__main__.MyLib object at 0x000001895FED1310>
+2026-09-04 09:33:11:draw_module:[DEBUG]:Basic
+2026-09-04 09:33:11:draw_module:[DEBUG]:<class 'klayout.dbcore.Library'>
+2026-09-04 09:33:11:draw_module:[DEBUG]:<klayout.dbcore.Library object at 0x000001895E6914D0>
+2026-09-04 09:33:11:draw_module:[DEBUG]:3
+2026-09-04 09:33:11:draw_module:[DEBUG]:1
+2026-09-04 09:33:11:draw_module:[DEBUG]:2
+2026-09-04 09:33:11:draw_module:[DEBUG]:0
+2026-09-04 09:33:11:draw_module:[DEBUG]:module_desc_dict {'nch_ldmhs_lr_16v_M01_D01': {'M01': '235.6', 'M08': '4', 'M10': '0', 'M32': '1', 'M33': '1', 'M34': '1', 'M35': '1', 'M36': '259'}, 'nch_ldmhs_lr_16v_M01_D02': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D03': {'M01': '235.6', 'M08': '4', 'M10': '0', 'M32': '1', 'M33': '1', 'M34': '1', 'M35': '1', 'M36': '259'}, 'nch_ldmhs_lr_16v_M01_D04': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D05': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D06': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D07': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D08': {'M01': '235.6', 'M08': '50', 'M10': '0', 'M32': '1', 'M33': '1', 'M34': '1', 'M35': '1', 'M36': '259'}, 'nch_ldmhs_lr_16v_M01_D09': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D10': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D11': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D12': {'M10': '0'}}
