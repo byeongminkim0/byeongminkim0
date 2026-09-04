@@ -139,3 +139,5 @@ Traceback (most recent call last):
   File "C:\Users\10008505\Desktop\TEPortal\kweb\src\kweb\flat_gds_hierarchy_converter.py", line 3396, in _verify_flattened_geometry
     raise ConversionError(
 kweb.flat_gds_hierarchy_converter.ConversionError: flatten geometry mismatch on layer 2/0 outside tolerance 0 DBU
+
+해당 오류도 해결해 줘야돼
