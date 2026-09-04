@@ -1,47 +1,123 @@
 Creating PCell...
-2026-09-04 09:33:11:desc_reader:[DEBUG]:[('M01', 'DIFF_35_W', '13.3', '02', 'A', '', 'N', 'Unit Width'), ('M08', 'n', '4', '07', 'H', '', 'N', 'Finger'), ('M32', 'iso_row', '1', '17', 'AC', '', 'N', 'ISO row'), ('M33', 'iso_col', '1', '16', 'AD', '', 'N', 'ISO col'), ('M34', 'psub_row', '1', '15', 'AE', '', 'N', 'PSUB row'), ('M35', 'psub_col', '1', '14', 'AF', '', 'N', 'PSUB col'), ('M36', 'NIMP_17_pick_up_DIFF_35', '12', '12', 'ZZ', '', 'N', 'Pick up')]
-2026-09-04 09:33:11:desc_reader:[DEBUG]:diffs : {'Box_DIFF_35': ['0.0', 0.0, '6.65 - 0.5*M01', 0.0]}
-2026-09-04 09:33:11:desc_reader:[DEBUG]:met1_dict : {'Box_MET1_12': ['-0.3', -0.3], 'Box_MET1_15': ['1.45', 1.45], 'Box_MET1_16': ['3.2', 3.2]}
-2026-09-04 09:33:11:desc_reader:[DEBUG]:met1_x2_dict : {'Box_MET1_12': ['0.9', 0.9], 'Box_MET1_15': ['2.65', 2.65], 'Box_MET1_16': ['4.4', 4.4]}
-2026-09-04 09:33:11:desc_reader:[DEBUG]:13.3 4.1
-2026-09-04 09:33:11:layout_reader:[DEBUG]:nch_ldmhs_lr_16v_M01_unitCell_AUTO
-2026-09-04 09:33:11:layout_reader:[DEBUG]:inst array
-2026-09-04 09:33:11:layout_reader:[DEBUG]:0,0 3500,0
-2026-09-04 09:33:11:desc_reader:[DEBUG]:MOS
-2026-09-04 09:33:11:desc_reader:[DEBUG]:finger_value: (3.2-(-0.3))
-2026-09-04 09:33:11:desc_reader:[DEBUG]:(3.2-(-0.3))
-2026-09-04 09:33:11:script_generator:[WARNING]:Layer 44 not found in DB, using default name: L44
-2026-09-04 09:33:11:script_generator:[WARNING]:Layer -1_-1 not found in DB, using default name: L-1.-1
-2026-09-04 09:33:11:script_generator:[DEBUG]:Polygon_NIMP_17 Component(type='Polygon', cell='01', layer='8', ref_comp=['Box_DIFF_35'], c1=('1.15', '4.97 - 0.5*M01'), c2=('2.95', '0.5*M01 + 8.33'), corner=0.0, hole_list=[['0.0', '1.65', '6.47 - 0.5*M01', '2.45', '1.025'], ['0.0', '1.65', '1.475', '2.45', '1.925'], ['0.0', '1.65', '2.375', '2.45', '2.825'], ['0.0', '1.65', '3.275', '2.45', '3.725'], ['0.0', '1.65', '4.175', '2.45', '4.625'], ['0.0', '1.65', '5.075', '2.45', '5.525'], ['0.0', '1.65', '5.975', '2.45', '6.425'], ['0.0', '1.65', '6.875', '2.45', '7.325'], ['0.0', '1.65', '7.775', '2.45', '8.225'], ['0.0', '1.65', '8.675', '2.45', '9.125'], ['0.0', '1.65', '9.575', '2.45', '10.025'], ['0.0', '1.65', '10.475', '2.45', '10.925'], ['0.0', '1.65', '11.375', '2.45', '11.825'], ['0.0', '1.65', '12.275', '2.45', '0.5*M01 + 6.83']])
-2026-09-04 09:33:11:pcell_creator:[DEBUG]:C:\Users\10008505\Desktop\TEPortal\kweb\src\kweb/lym/pcell_sample_python_modified.lym created
-2026-09-04 09:33:11:pcell_sample_python_modified:[DEBUG]:['9', '11', '155', '146', '112', '102', '100', '94', '47', '24', '10', '8', '7', '6', '3', '44', '134', '111', '105', '96', '40', '40', '23', '22', '12', '-1']
-2026-09-04 09:33:11:layout_server:[INFO]:[PCELL] Auto-created PCell for dvcNo=3194
-2026-09-04 09:33:11:layout_server:[DEBUG]:HEALTH_CHECK 전송 완료 (dvcNo=3194, pcell=False), xor=False
-2026-09-04 09:33:11:layout_server:[DEBUG]:현재 테마: dark
-2026-09-04 09:33:11:layout_server:[INFO]:[selected-shapes] payload=[]
-2026-09-04 09:33:11:layout_server:[DEBUG]:현재 테마: dark
-2026-09-04 09:33:11:layout_server:[INFO]:[selected-shapes] payload=[]
-2026-09-04 09:33:11:layout_server:[INFO]:[selected-shapes] payload=[]
-2026-09-04 09:33:11:layout_server:[INFO]:[selected-shapes] payload=[]
-2026-09-04 09:33:11:viewer:[DEBUG]:HTTP POST 수신: /draw-one-module
-2026-09-04 09:33:11:viewer:[DEBUG]:  - dvcNo: 3194
-2026-09-04 09:33:11:viewer:[DEBUG]:  - moduleId: 1
+2026-09-04 09:34:54:desc_reader:[DEBUG]:[('M01', 'DIFF_35_W', '13.3', '02', 'A', '', 'N', 'Unit Width'), ('M08', 'n', '4', '07', 'H', '', 'N', 'Finger'), ('M32', 'iso_row', '1', '17', 'AC', '', 'N', 'ISO row'), ('M33', 'iso_col', '1', '16', 'AD', '', 'N', 'ISO col'), ('M34', 'psub_row', '1', '15', 'AE', '', 'N', 'PSUB row'), ('M35', 'psub_col', '1', '14', 'AF', '', 'N', 'PSUB col'), ('M36', 'NIMP_17_pick_up_DIFF_35', '12', '12', 'ZZ', '', 'N', 'Pick up')]
+2026-09-04 09:34:54:desc_reader:[DEBUG]:diffs : {'Box_DIFF_35': ['0.0', 0.0, '6.65 - 0.5*M01', 0.0]}
+2026-09-04 09:34:54:desc_reader:[DEBUG]:met1_dict : {'Box_MET1_12': ['-0.3', -0.3], 'Box_MET1_15': ['1.45', 1.45], 'Box_MET1_16': ['3.2', 3.2]}
+2026-09-04 09:34:54:desc_reader:[DEBUG]:met1_x2_dict : {'Box_MET1_12': ['0.9', 0.9], 'Box_MET1_15': ['2.65', 2.65], 'Box_MET1_16': ['4.4', 4.4]}
+2026-09-04 09:34:54:desc_reader:[DEBUG]:13.3 4.1
+2026-09-04 09:34:54:layout_reader:[DEBUG]:nch_ldmhs_lr_16v_M01_unitCell_AUTO
+2026-09-04 09:34:54:layout_reader:[DEBUG]:inst array
+2026-09-04 09:34:54:layout_reader:[DEBUG]:0,0 3500,0
+2026-09-04 09:34:54:desc_reader:[DEBUG]:MOS
+2026-09-04 09:34:54:desc_reader:[DEBUG]:finger_value: (3.2-(-0.3))
+2026-09-04 09:34:54:desc_reader:[DEBUG]:(3.2-(-0.3))
+2026-09-04 09:34:54:script_generator:[WARNING]:Layer 44 not found in DB, using default name: L44
+2026-09-04 09:34:54:script_generator:[WARNING]:Layer -1_-1 not found in DB, using default name: L-1.-1
+2026-09-04 09:34:54:script_generator:[DEBUG]:Polygon_NIMP_17 Component(type='Polygon', cell='01', layer='8', ref_comp=['Box_DIFF_35'], c1=('1.15', '4.97 - 0.5*M01'), c2=('2.95', '0.5*M01 + 8.33'), corner=0.0, hole_list=[['0.0', '1.65', '6.47 - 0.5*M01', '2.45', '1.025'], ['0.0', '1.65', '1.475', '2.45', '1.925'], ['0.0', '1.65', '2.375', '2.45', '2.825'], ['0.0', '1.65', '3.275', '2.45', '3.725'], ['0.0', '1.65', '4.175', '2.45', '4.625'], ['0.0', '1.65', '5.075', '2.45', '5.525'], ['0.0', '1.65', '5.975', '2.45', '6.425'], ['0.0', '1.65', '6.875', '2.45', '7.325'], ['0.0', '1.65', '7.775', '2.45', '8.225'], ['0.0', '1.65', '8.675', '2.45', '9.125'], ['0.0', '1.65', '9.575', '2.45', '10.025'], ['0.0', '1.65', '10.475', '2.45', '10.925'], ['0.0', '1.65', '11.375', '2.45', '11.825'], ['0.0', '1.65', '12.275', '2.45', '0.5*M01 + 6.83']])
+2026-09-04 09:34:54:pcell_creator:[DEBUG]:C:\Users\10008505\Desktop\TEPortal\kweb\src\kweb/lym/pcell_sample_python_modified.lym created
+2026-09-04 09:34:54:pcell_sample_python_modified:[DEBUG]:['9', '11', '155', '146', '112', '102', '100', '94', '47', '24', '10', '8', '7', '6', '3', '44', '134', '111', '105', '96', '40', '40', '23', '22', '12', '-1']
+2026-09-04 09:34:54:layout_server:[INFO]:[PCELL] Auto-created PCell for dvcNo=3194
+2026-09-04 09:34:54:layout_server:[DEBUG]:HEALTH_CHECK 전송 완료 (dvcNo=3194, pcell=False), xor=False
+2026-09-04 09:34:54:layout_server:[DEBUG]:현재 테마: dark
+2026-09-04 09:34:54:layout_server:[INFO]:[selected-shapes] payload=[]
+2026-09-04 09:34:55:layout_server:[DEBUG]:현재 테마: dark
+2026-09-04 09:34:55:layout_server:[INFO]:[selected-shapes] payload=[]
+2026-09-04 09:34:55:viewer:[DEBUG]:HTTP POST 수신: /draw-one-module
+2026-09-04 09:34:55:viewer:[DEBUG]:  - dvcNo: 3194
+2026-09-04 09:34:55:viewer:[DEBUG]:  - moduleId: 1
 asym_flag N
-2026-09-04 09:33:11:draw_module:[DEBUG]:라이브러리 찾음! <__main__.MyLib object at 0x000001895FF0F680>
-2026-09-04 09:33:11:draw_module:[DEBUG]:3194
-2026-09-04 09:33:11:draw_module:[DEBUG]:<class '__main__.MyLib'>
-2026-09-04 09:33:11:draw_module:[DEBUG]:<__main__.MyLib object at 0x000001895FF0F680>
-2026-09-04 09:33:11:draw_module:[DEBUG]:3197
-2026-09-04 09:33:11:draw_module:[DEBUG]:<class '__main__.MyLib'>
-2026-09-04 09:33:11:draw_module:[DEBUG]:<__main__.MyLib object at 0x000001895E692D50>
-2026-09-04 09:33:11:draw_module:[DEBUG]:3198
-2026-09-04 09:33:11:draw_module:[DEBUG]:<class '__main__.MyLib'>
-2026-09-04 09:33:11:draw_module:[DEBUG]:<__main__.MyLib object at 0x000001895FED1310>
-2026-09-04 09:33:11:draw_module:[DEBUG]:Basic
-2026-09-04 09:33:11:draw_module:[DEBUG]:<class 'klayout.dbcore.Library'>
-2026-09-04 09:33:11:draw_module:[DEBUG]:<klayout.dbcore.Library object at 0x000001895E6914D0>
-2026-09-04 09:33:11:draw_module:[DEBUG]:3
-2026-09-04 09:33:11:draw_module:[DEBUG]:1
-2026-09-04 09:33:11:draw_module:[DEBUG]:2
-2026-09-04 09:33:11:draw_module:[DEBUG]:0
-2026-09-04 09:33:11:draw_module:[DEBUG]:module_desc_dict {'nch_ldmhs_lr_16v_M01_D01': {'M01': '235.6', 'M08': '4', 'M10': '0', 'M32': '1', 'M33': '1', 'M34': '1', 'M35': '1', 'M36': '259'}, 'nch_ldmhs_lr_16v_M01_D02': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D03': {'M01': '235.6', 'M08': '4', 'M10': '0', 'M32': '1', 'M33': '1', 'M34': '1', 'M35': '1', 'M36': '259'}, 'nch_ldmhs_lr_16v_M01_D04': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D05': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D06': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D07': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D08': {'M01': '235.6', 'M08': '50', 'M10': '0', 'M32': '1', 'M33': '1', 'M34': '1', 'M35': '1', 'M36': '259'}, 'nch_ldmhs_lr_16v_M01_D09': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D10': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D11': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D12': {'M10': '0'}}
+2026-09-04 09:34:55:draw_module:[DEBUG]:라이브러리 찾음! <__main__.MyLib object at 0x000001896680D310>
+2026-09-04 09:34:55:draw_module:[DEBUG]:3194
+2026-09-04 09:34:55:draw_module:[DEBUG]:<class '__main__.MyLib'>
+2026-09-04 09:34:55:draw_module:[DEBUG]:<__main__.MyLib object at 0x000001896680D310>
+2026-09-04 09:34:55:draw_module:[DEBUG]:3197
+2026-09-04 09:34:55:draw_module:[DEBUG]:<class '__main__.MyLib'>
+2026-09-04 09:34:55:draw_module:[DEBUG]:<__main__.MyLib object at 0x000001895E692D50>
+2026-09-04 09:34:55:draw_module:[DEBUG]:3198
+2026-09-04 09:34:55:draw_module:[DEBUG]:<class '__main__.MyLib'>
+2026-09-04 09:34:55:draw_module:[DEBUG]:<__main__.MyLib object at 0x000001895FED1310>
+2026-09-04 09:34:55:draw_module:[DEBUG]:Basic
+2026-09-04 09:34:55:draw_module:[DEBUG]:<class 'klayout.dbcore.Library'>
+2026-09-04 09:34:55:draw_module:[DEBUG]:<klayout.dbcore.Library object at 0x000001895E6914D0>
+2026-09-04 09:34:55:draw_module:[DEBUG]:4
+2026-09-04 09:34:55:draw_module:[DEBUG]:1
+2026-09-04 09:34:55:draw_module:[DEBUG]:2
+2026-09-04 09:34:55:draw_module:[DEBUG]:0
+2026-09-04 09:34:55:draw_module:[DEBUG]:module_desc_dict {'nch_ldmhs_lr_16v_M01_D01': {'M01': '235.6', 'M08': '4', 'M10': '0', 'M32': '1', 'M33': '1', 'M34': '1', 'M35': '1'}, 'nch_ldmhs_lr_16v_M01_D02': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D03': {'M01': '235.6', 'M08': '4', 'M10': '0', 'M32': '1', 'M33': '1', 'M34': '1', 'M35': '1'}, 'nch_ldmhs_lr_16v_M01_D04': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D05': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D06': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D07': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D08': {'M01': '235.6', 'M08': '50', 'M10': '0', 'M32': '1', 'M33': '1', 'M34': '1', 'M35': '1'}, 'nch_ldmhs_lr_16v_M01_D09': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D10': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D11': {'M10': '0'}, 'nch_ldmhs_lr_16v_M01_D12': {'M10': '0'}}
+
+2026-09-04 09:35:19:viewer:[DEBUG]:HTTP POST 수신: /split-check
+2026-09-04 09:35:19:viewer:[DEBUG]: - dvcNo: 3194
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list keys (symbols): ['A', 'AA', 'AB', 'AC', 'AD', 'AE', 'AF', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'ZZ', None]
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['A'] count=36 sample: dsc_cd=M01 symbol_attr=A obj_layer=DIFF
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['AA'] count=36 sample: dsc_cd=M30 symbol_attr=AA obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['AB'] count=36 sample: dsc_cd=M31 symbol_attr=AB obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['AC'] count=36 sample: dsc_cd=M32 symbol_attr=AC obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['AD'] count=36 sample: dsc_cd=M33 symbol_attr=AD obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['AE'] count=36 sample: dsc_cd=M34 symbol_attr=AE obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['AF'] count=36 sample: dsc_cd=M35 symbol_attr=AF obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['B'] count=36 sample: dsc_cd=M02 symbol_attr=B obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['C'] count=36 sample: dsc_cd=M03 symbol_attr=C obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['D'] count=36 sample: dsc_cd=M04 symbol_attr=D obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['E'] count=36 sample: dsc_cd=M05 symbol_attr=E obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['F'] count=36 sample: dsc_cd=M06 symbol_attr=F obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['G'] count=36 sample: dsc_cd=M07 symbol_attr=G obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['H'] count=36 sample: dsc_cd=M08 symbol_attr=H obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['I'] count=36 sample: dsc_cd=M09 symbol_attr=I obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['J'] count=36 sample: dsc_cd=M10 symbol_attr=J obj_layer=None
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list['ZZ'] count=36 sample: dsc_cd=M36 symbol_attr=ZZ obj_layer=NIMP
+2026-09-04 09:35:20:viewer:[INFO]:[split-check] desc_list[None] count=108 sample: dsc_cd=M11 symbol_attr=None obj_layer=None
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:WIDTH
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:235.6 235.6
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:WIDTH
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:235.6 235.6
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:WIDTH
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:13.3 235.6
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] error: dut=nch_ldmhs_lr_16v_M01_D08 sym='A' dsc_cd=M01 type=Width obj=DIFF expected=235.6 actual=13.3
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:line x1 = 2601950.0
+x2 = 2606050.0
+y1 = 142350.0
+y2 = 155650.0
+A_area.insert(RBA::Box.new(x1, y1, x2, y2)) | obj_name DIFF
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:layer_cd 3
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=17 symbol=AC obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=17 symbol=AC obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=17 symbol=AC obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=16 symbol=AD obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=16 symbol=AD obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=16 symbol=AD obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=15 symbol=AE obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=15 symbol=AE obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=15 symbol=AE obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=14 symbol=AF obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=14 symbol=AF obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] skip desc: type=14 symbol=AF obj_id=''
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] error: dut=nch_ldmhs_lr_16v_M01_D01 sym='ZZ' dsc_cd=M36 type=Pick up obj=NIMP expected=12.0 actual=2.0
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] error: dut=nch_ldmhs_lr_16v_M01_D03 sym='ZZ' dsc_cd=M36 type=Pick up obj=NIMP expected=12.0 actual=2.0
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:error_layers : {'3', '8'}
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:error_shape_ids : {'17', '35'}
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='A' type=02 drawn=3 = passed=2 + failed=1 + N/A(0+0+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='AA' type=19 drawn=3 = passed=0 + failed=0 + N/A(3+0+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='AB' type=18 drawn=3 = passed=0 + failed=0 + N/A(3+0+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='AC' type=17 drawn=3 = passed=0 + failed=0 + N/A(0+3+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='AD' type=16 drawn=3 = passed=0 + failed=0 + N/A(0+3+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='AE' type=15 drawn=3 = passed=0 + failed=0 + N/A(0+3+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='AF' type=14 drawn=3 = passed=0 + failed=0 + N/A(0+3+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='B' type=01 drawn=3 = passed=0 + failed=0 + N/A(3+0+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='C' type=06 drawn=3 = passed=0 + failed=0 + N/A(3+0+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='D' type=05 drawn=3 = passed=0 + failed=0 + N/A(3+0+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='E' type=06 drawn=3 = passed=0 + failed=0 + N/A(3+0+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='F' type=06 drawn=3 = passed=0 + failed=0 + N/A(3+0+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='G' type=02 drawn=3 = passed=0 + failed=0 + N/A(3+0+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] symbol='ZZ' type=12 drawn=3 = passed=1 + failed=2 + N/A(0+0+0) | not_drawn=33
+2026-09-04 09:35:20:drc_script_generator:[DEBUG]:[DRC] error_details=3 passed_details=3
+2026-09-04 09:35:20:layout_server:[DEBUG]:Split check 결과 수신:
+2026-09-04 09:35:20:layout_server:[DEBUG]:  - dvcNo: 3194
+2026-09-04 09:35:20:layout_server:[DEBUG]:  - passed: False
+2026-09-04 09:35:20:layout_server:[DEBUG]:  - errorCount: 3
+2026-09-04 09:35:20:layout_server:[DEBUG]:  - errorLayers: ['3', '8']
+2026-09-04 09:35:20:layout_server:[DEBUG]:  - errorShapeIds: ['17', '35']
+2026-09-04 09:35:20:layout_server:[DEBUG]:Target shape IDs: {'17', '35'}
+2026-09-04 09:35:20:layout_server:[DEBUG]:Layers to scan: 2 layers
+2026-09-04 09:35:20:layout_server:[DEBUG]:Split check 하이라이팅 완료: 7개 shape에 마커 표시
+2026-09-04 09:35:20:viewer:[DEBUG]:스플릿 검증 완료: passed=False, errorCount=3
+2026-09-04 09:35:20:httptools_impl:[INFO]:::1:64869 - "POST /split-check HTTP/1.1" 200
+2026-09-04 09:35:21:layout_server:[INFO]:[selected-shapes] payload=[]
