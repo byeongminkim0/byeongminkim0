@@ -1,0 +1,121 @@
+2026-09-04 16:52:09:viewer:[DEBUG]:업로드 파일 처리: C:\Users\10008505\AppData\Local\Temp\kweb-runtime-layouts\Name_18_3_free_test_r2_8795657b.gds
+2026-09-04 16:52:11:flat_gds_hierarchy_converter:[WARNING]:ring layer 3/0 is unusable (missing or has no ring hole); fell back to 10/0:MET1
+2026-09-04 16:52:21:flat_gds_hierarchy_converter:[INFO]:CONTACT_MET1_REFERENCE layer=10/0 boxes=130
+2026-09-04 16:52:43:flat_gds_hierarchy_converter:[INFO]:UNIT_ANCHOR layer=10/0 repeat_count=60 pitch_dbu=45600 requested_unit_count=60 centers_x_dbu=[112629,158229,203829,249429,295029,340629,386229,431829,477429,523029,568629,614229,659829,705429,751029,796629,842229,887829,933429,979029,1024629,1070229,1115829,1161429,1207029,1252629,1298229,1343829,1389429,1435029,1480629,1526229,1571829,1617429,1663029,1708629,1754229,1799829,1845429,1891029,1936629,1982229,2027829,2073429,2119029,2164629,2210229,2255829,2301429,2347029,2392629,2438229,2483829,2529429,2575029,2620629,2666229,2711829,2757429,2803029] ring_hole_bbox_dbu=(47829,48391;2867829,1298391) layout_dbu_um=0.0010000000000000002
+2026-09-04 16:52:43:flat_gds_hierarchy_converter:[WARNING]:used requested UNIT array count 60; centered 60 of 60 base pitches with DIFF-centered symmetric boundaries
+2026-09-04 16:53:03:flat_gds_hierarchy_converter:[WARNING]:no repeated ring-hole size; inferred UNIT windows from 60 regularly repeated shapes inside the innermost ring hole
+2026-09-04 16:53:53:flat_gds_hierarchy_converter:[INFO]:UNIT_BOUNDARY_OVERLAP_INCLUDE layer=24/0 shapes_per_unit=2
+2026-09-04 16:53:53:flat_gds_hierarchy_converter:[INFO]:UNIT_BOUNDARY_OVERLAP_INCLUDE layer=23/0 shapes_per_unit=2
+2026-09-04 16:53:53:flat_gds_hierarchy_converter:[INFO]:UNIT_BOUNDARY_OVERLAP_INCLUDE layer=12/0 shapes_per_unit=2
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=9/0 shapes_per_unit=3474
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=11/0 shapes_per_unit=3838
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=6/0 shapes_per_unit=3
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=24/0 shapes_per_unit=5
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=23/0 shapes_per_unit=5
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=10/0 shapes_per_unit=4
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=12/0 shapes_per_unit=4
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=7/0 shapes_per_unit=2
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=2/0 shapes_per_unit=2
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=1/0 shapes_per_unit=2
+2026-09-04 16:54:53:flat_gds_hierarchy_converter:[INFO]:UNIT_DIRECT_INCLUDE layer=5/0 shapes_per_unit=2
+2026-09-04 17:08:08:flat_gds_hierarchy_converter:[INFO]:UNIT_VIA_SUPPORT_INCLUDE via_layer=11/0 metal_layer=10/0 shapes_per_unit=5486
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=9/0 shapes_per_unit=5774
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=7/0 shapes_per_unit=2
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=6/0 shapes_per_unit=3
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=5/0 shapes_per_unit=2
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=2/0 shapes_per_unit=2
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=1/0 shapes_per_unit=2
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=10/0 shapes_per_unit=3
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=23/0 shapes_per_unit=3
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=11/0 shapes_per_unit=5486
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=24/0 shapes_per_unit=3
+2026-09-04 17:08:09:flat_gds_hierarchy_converter:[INFO]:UNIT_INCLUDE layer=12/0 shapes_per_unit=2
+2026-09-04 17:08:11:flat_gds_hierarchy_converter:[WARNING]:kept all 60 requested UNIT windows; common repeated geometry was instanced and edge-only geometry was left flat
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(13600,64000;18800,1226000) points=192 -> rectilinear points=8 deviation_dbu=237
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(-22800,20000;68400,1226000) points=224 -> rectilinear points=12 deviation_dbu=1000
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(26800,64000;32000,1226000) points=192 -> rectilinear points=8 deviation_dbu=237
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(-1650,66850;1650,1223150) points=60 -> rectilinear points=4 deviation_dbu=400
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(43950,66850;47250,1223150) points=60 -> rectilinear points=4 deviation_dbu=400
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(-1500,67000;1500,1223000) points=54 -> rectilinear points=4 deviation_dbu=250
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(21800,67000;23800,1223000) points=96 -> rectilinear points=4 deviation_dbu=237
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(44100,67000;47100,1223000) points=54 -> rectilinear points=4 deviation_dbu=250
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(12600,66500;20000,1223500) points=192 -> rectilinear points=8 deviation_dbu=237
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(25600,66500;33000,1223500) points=192 -> rectilinear points=8 deviation_dbu=237
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(19650,64150;20750,1225850) points=96 -> rectilinear points=4 deviation_dbu=237
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(24850,64150;25950,1225850) points=96 -> rectilinear points=4 deviation_dbu=237
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(19500,64000;20900,1226000) points=96 -> rectilinear points=4 deviation_dbu=237
+2026-09-04 17:08:53:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(24700,64000;26100,1226000) points=96 -> rectilinear points=4 deviation_dbu=237
+2026-09-04 17:09:37:flat_gds_hierarchy_converter:[INFO]:REMAINDER_REWRITE_BEGIN coverage_layers=11
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=9/0 input_shapes=263146 merged_shapes=52385 elapsed_seconds=2.887
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(69829,114891;77229,1271891) points=192 -> rectilinear points=8 deviation_dbu=237
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(2838429,114891;2845829,1271891) points=192 -> rectilinear points=8 deviation_dbu=237
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=7/0 input_shapes=2806 merged_shapes=6 elapsed_seconds=0.139
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(67929,88391;71329,1274391) points=110 -> rectilinear points=4 deviation_dbu=1000
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(71029,112391;76229,1274391) points=192 -> rectilinear points=8 deviation_dbu=237
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(2839429,112391;2844629,1274391) points=192 -> rectilinear points=8 deviation_dbu=237
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(2844329,88391;2847729,1274391) points=110 -> rectilinear points=4 deviation_dbu=1000
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=6/0 input_shapes=4514 merged_shapes=10 elapsed_seconds=0.119
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=5/0 input_shapes=122 merged_shapes=2 elapsed_seconds=0.016
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(66029,112541;109479,1274241) points=104 -> rectilinear points=12 deviation_dbu=237
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(2806179,112541;2849629,1274241) points=104 -> rectilinear points=12 deviation_dbu=237
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=2/0 input_shapes=123 merged_shapes=125 elapsed_seconds=0.014
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(68929,112391;70329,1274391) points=96 -> rectilinear points=4 deviation_dbu=237
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(2845329,112391;2846729,1274391) points=96 -> rectilinear points=4 deviation_dbu=237
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=1/0 input_shapes=122 merged_shapes=2 elapsed_seconds=0.012
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=10/0 input_shapes=754 merged_shapes=22 elapsed_seconds=0.021
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(66029,115391;68029,1271391) points=96 -> rectilinear points=4 deviation_dbu=237
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:DEFILLET concave hull bbox=(2847629,115391;2849629,1271391) points=96 -> rectilinear points=4 deviation_dbu=237
+2026-09-04 17:09:40:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=23/0 input_shapes=877 merged_shapes=8 elapsed_seconds=0.021
+2026-09-04 17:10:16:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=11/0 input_shapes=251167 merged_shapes=19225 elapsed_seconds=36.013
+2026-09-04 17:10:16:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=24/0 input_shapes=869 merged_shapes=7 elapsed_seconds=0.066
+2026-09-04 17:10:16:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=12/0 input_shapes=629 merged_shapes=6 elapsed_seconds=0.025
+2026-09-04 17:10:17:flat_gds_hierarchy_converter:[INFO]:REMAINDER_REWRITE_END merged_layers=11 elapsed_seconds=40.126
+2026-09-04 17:10:18:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=25/0 input_shapes=6 merged_shapes=6
+2026-09-04 17:10:18:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=21/0 input_shapes=16 merged_shapes=4
+2026-09-04 17:10:18:flat_gds_hierarchy_converter:[INFO]:REMAINDER_MERGE layer=63/0 input_shapes=1 merged_shapes=1
+2026-09-04 17:10:18:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top cell=Top_unitCell_AUTO placements=60 arrays=1 singles=0 max_pitch_dbu=None
+2026-09-04 17:10:18:flat_gds_hierarchy_converter:[INFO]:INSTANCE_ARRAY A0001 owner=Top cell=Top_unitCell_AUTO origin=(89829,48391) last=(2780229,48391) pitch=(45600,0) count=(60,1) placements=60 adjustment_dbu=0
+2026-09-04 17:10:18:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top cell=Top_unitCell_AUTO represented=60
+2026-09-04 17:10:18:flat_gds_hierarchy_converter:[INFO]:CONT_MET1_GROUPS owner=Top_unitCell_AUTO layer=9/0 metal_boxes=2 supported_groups=2 unowned=2300
+2026-09-04 17:10:18:flat_gds_hierarchy_converter:[INFO]:PRIMITIVE_GROUP owner=Top_unitCell_AUTO layer=9/0 label=CONT size_dbu=600x600 placements=2300 x=[-800,200] y=[70200,71200,72200,73200,74200,...,1215200,1216200,1217200,1218200,1219200](1150 values)
+2026-09-04 17:10:18:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top_unitCell_AUTO cell=AUTO_CONT_L9D0_600x600 placements=2300 arrays=0 singles=2300 max_pitch_dbu=1000
+2026-09-04 17:10:18:flat_gds_hierarchy_converter:[INFO]:INSTANCE_SINGLETONS owner=Top_unitCell_AUTO cell=AUTO_CONT_L9D0_600x600 count=2300 points=[(-800,70200),(-800,71200),(-800,72200),(-800,73200),(-800,74200),(-800,75200),(-800,76200),(-800,77200),(-800,78200),(-800,79200),(200,1210200),(200,1211200),(200,1212200),(200,1213200),(200,1214200),(200,1215200),(200,1216200),(200,1217200),(200,1218200),(200,1219200),...(2300 points)]
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top_unitCell_AUTO cell=AUTO_CONT_L9D0_600x600 represented=2300
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:PRIMITIVE_GROUP owner=Top_unitCell_AUTO layer=9/0 label=CONT size_dbu=600x600 placements=1174 x=[14300,15300,16300,22500,28700,29700,30700] y=[64700,67200,70200,71200,72200,...,1217200,1218200,1219200,1222200,1224700](1154 values)
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top_unitCell_AUTO cell=AUTO_CONT_L9D0_600x600 placements=1174 arrays=0 singles=1174 max_pitch_dbu=1000
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:INSTANCE_SINGLETONS owner=Top_unitCell_AUTO cell=AUTO_CONT_L9D0_600x600 count=1174 points=[(14300,64700),(14300,67200),(14300,1222200),(14300,1224700),(15300,64700),(15300,67200),(15300,1222200),(15300,1224700),(16300,64700),(16300,67200),(28700,1222200),(28700,1224700),(29700,64700),(29700,67200),(29700,1222200),(29700,1224700),(30700,64700),(30700,67200),(30700,1222200),(30700,1224700),...(1174 points)]
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top_unitCell_AUTO cell=AUTO_CONT_L9D0_600x600 represented=1174
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:PRIMITIVE_GROUP owner=Top_unitCell_AUTO layer=9/0 label=CONT size_dbu=600x600 placements=2300 x=[44800,45800] y=[70200,71200,72200,73200,74200,...,1215200,1216200,1217200,1218200,1219200](1150 values)
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top_unitCell_AUTO cell=AUTO_CONT_L9D0_600x600 placements=2300 arrays=0 singles=2300 max_pitch_dbu=1000
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:INSTANCE_SINGLETONS owner=Top_unitCell_AUTO cell=AUTO_CONT_L9D0_600x600 count=2300 points=[(44800,70200),(44800,71200),(44800,72200),(44800,73200),(44800,74200),(44800,75200),(44800,76200),(44800,77200),(44800,78200),(44800,79200),(45800,1210200),(45800,1211200),(45800,1212200),(45800,1213200),(45800,1214200),(45800,1215200),(45800,1216200),(45800,1217200),(45800,1218200),(45800,1219200),...(2300 points)]
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top_unitCell_AUTO cell=AUTO_CONT_L9D0_600x600 represented=2300
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:PRIMITIVE_GROUP owner=Top_unitCell_AUTO layer=11/0 label=VIA1 size_dbu=1000x1000 placements=5486 x=[-3500,-1500,500,2500,17300,...,27300,42100,44100,46100,48100](14 values) y=[211500,213500,215500,217500,219500,...,1212500,1214500,1216500,1218500,1220500](777 values)
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top_unitCell_AUTO cell=AUTO_VIA1_L11D0_1000x1000 placements=5486 arrays=0 singles=5486 max_pitch_dbu=1000
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:INSTANCE_SINGLETONS owner=Top_unitCell_AUTO cell=AUTO_VIA1_L11D0_1000x1000 count=5486 points=[(-3500,268500),(-3500,270500),(-3500,272500),(-3500,274500),(-3500,276500),(-3500,278500),(-3500,280500),(-3500,282500),(-3500,284500),(-3500,286500),(48100,1072500),(48100,1074500),(48100,1076500),(48100,1078500),(48100,1210500),(48100,1212500),(48100,1214500),(48100,1216500),(48100,1218500),(48100,1220500),...(5486 points)]
+2026-09-04 17:10:19:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top_unitCell_AUTO cell=AUTO_VIA1_L11D0_1000x1000 represented=5486
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:CONT_MET1_GROUPS owner=Top layer=9/0 metal_boxes=10 supported_groups=5 unowned=0
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:PRIMITIVE_GROUP owner=Top layer=9/0 label=CONT size_dbu=600x600 placements=38934 x=[67529,68529,69529,70529,71529,...,2843529,2844529,2845529,2846529,2847529](2781 values) y=[71591,72591,73591,74591,75591,...,80591,81591,82591,83591,84591](14 values)
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top cell=AUTO_CONT_L9D0_600x600 placements=38934 arrays=0 singles=38934 max_pitch_dbu=1000
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_SINGLETONS owner=Top cell=AUTO_CONT_L9D0_600x600 count=38934 points=[(67529,71591),(67529,72591),(67529,73591),(67529,74591),(67529,75591),(67529,76591),(67529,77591),(67529,78591),(67529,79591),(67529,80591),(2847529,75591),(2847529,76591),(2847529,77591),(2847529,78591),(2847529,79591),(2847529,80591),(2847529,81591),(2847529,82591),(2847529,83591),(2847529,84591),...(38934 points)]
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top cell=AUTO_CONT_L9D0_600x600 represented=38934
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:PRIMITIVE_GROUP owner=Top layer=9/0 label=CONT size_dbu=600x600 placements=1162 x=[66729,72929,73929,74929] y=[113091,115591,118591,119591,120591,...,1265591,1266591,1267591,1270591,1273091](1154 values)
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top cell=AUTO_CONT_L9D0_600x600 placements=1162 arrays=0 singles=1162 max_pitch_dbu=1000
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_SINGLETONS owner=Top cell=AUTO_CONT_L9D0_600x600 count=1162 points=[(66729,118591),(66729,119591),(66729,120591),(66729,121591),(66729,122591),(66729,123591),(66729,124591),(66729,125591),(66729,126591),(66729,127591),(72929,1270591),(72929,1273091),(73929,113091),(73929,115591),(73929,1270591),(73929,1273091),(74929,113091),(74929,115591),(74929,1270591),(74929,1273091),...(1162 points)]
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top cell=AUTO_CONT_L9D0_600x600 represented=1162
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:PRIMITIVE_GROUP owner=Top layer=9/0 label=CONT size_dbu=600x600 placements=5562 x=[67529,68529,69529,70529,71529,...,2843529,2844529,2845529,2846529,2847529](2781 values) y=[69591,70591]
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top cell=AUTO_CONT_L9D0_600x600 placements=5562 arrays=0 singles=5562 max_pitch_dbu=1000
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_SINGLETONS owner=Top cell=AUTO_CONT_L9D0_600x600 count=5562 points=[(67529,69591),(67529,70591),(68529,69591),(68529,70591),(69529,69591),(69529,70591),(70529,69591),(70529,70591),(71529,69591),(71529,70591),(2843529,69591),(2843529,70591),(2844529,69591),(2844529,70591),(2845529,69591),(2845529,70591),(2846529,69591),(2846529,70591),(2847529,69591),(2847529,70591),...(5562 points)]
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top cell=AUTO_CONT_L9D0_600x600 represented=5562
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:PRIMITIVE_GROUP owner=Top layer=9/0 label=CONT size_dbu=600x600 placements=5562 x=[67529,68529,69529,70529,71529,...,2843529,2844529,2845529,2846529,2847529](2781 values) y=[85591,86591]
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top cell=AUTO_CONT_L9D0_600x600 placements=5562 arrays=0 singles=5562 max_pitch_dbu=1000
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_SINGLETONS owner=Top cell=AUTO_CONT_L9D0_600x600 count=5562 points=[(67529,85591),(67529,86591),(68529,85591),(68529,86591),(69529,85591),(69529,86591),(70529,85591),(70529,86591),(71529,85591),(71529,86591),(2843529,85591),(2843529,86591),(2844529,85591),(2844529,86591),(2845529,85591),(2845529,86591),(2846529,85591),(2846529,86591),(2847529,85591),(2847529,86591),...(5562 points)]
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top cell=AUTO_CONT_L9D0_600x600 represented=5562
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:PRIMITIVE_GROUP owner=Top layer=9/0 label=CONT size_dbu=600x600 placements=1162 x=[2840129,2841129,2842129,2848329] y=[113091,115591,118591,119591,120591,...,1265591,1266591,1267591,1270591,1273091](1154 values)
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top cell=AUTO_CONT_L9D0_600x600 placements=1162 arrays=0 singles=1162 max_pitch_dbu=1000
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_SINGLETONS owner=Top cell=AUTO_CONT_L9D0_600x600 count=1162 points=[(2840129,113091),(2840129,115591),(2840129,1270591),(2840129,1273091),(2841129,113091),(2841129,115591),(2841129,1270591),(2841129,1273091),(2842129,113091),(2842129,115591),(2848329,1258591),(2848329,1259591),(2848329,1260591),(2848329,1261591),(2848329,1262591),(2848329,1263591),(2848329,1264591),(2848329,1265591),(2848329,1266591),(2848329,1267591),...(1162 points)]
+2026-09-04 17:10:20:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top cell=AUTO_CONT_L9D0_600x600 represented=1162
+2026-09-04 17:10:22:flat_gds_hierarchy_converter:[INFO]:PRIMITIVE_GROUP owner=Top layer=11/0 label=VIA1 size_dbu=1000x1000 placements=19223 x=[67579,69579,71579,82829,84829,...,2832829,2834829,2843079,2845079,2847079](1939 values) y=[69891,71891,73891,75891,77891,...,1269891,1270891,1271891,1272891,1273891](590 values)
+2026-09-04 17:10:22:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_BEGIN owner=Top cell=AUTO_VIA1_L11D0_1000x1000 placements=19223 arrays=0 singles=19223 max_pitch_dbu=1000
+2026-09-04 17:10:22:flat_gds_hierarchy_converter:[INFO]:INSTANCE_SINGLETONS owner=Top cell=AUTO_VIA1_L11D0_1000x1000 count=19223 points=[(67579,265891),(67579,267891),(67579,269891),(67579,271891),(67579,273891),(67579,275891),(67579,277891),(67579,279891),(67579,281891),(67579,283891),(2847079,1255891),(2847079,1257891),(2847079,1259891),(2847079,1261891),(2847079,1263891),(2847079,1265891),(2847079,1267891),(2847079,1269891),(2847079,1271891),(2847079,1273891),...(19223 points)]
+2026-09-04 17:10:22:flat_gds_hierarchy_converter:[INFO]:INSTANCE_PACK_END owner=Top cell=AUTO_VIA1_L11D0_1000x1000 represented=19223
+2026-09-04 17:10:22:flat_gds_hierarchy_converter:[WARNING]:removed corner fillets from 26 concave shape(s) so they could be split into PCell-representable boxes; maximum geometry deviation was 1000 DBU
