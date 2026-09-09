@@ -1,5 +1,9 @@
 <div align="center">
 
+<a href="https://github.com/devxb/gitanimals">
+  <img src="https://render.gitanimals.org/farms/byeongminkim0"/>
+</a>
+
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2500&pause=800&color=58A6FF&center=true&vCenter=true&repeat=true&width=520&height=45&lines=%E2%9A%99%EF%B8%8F+Semiconductor+Test+Data+Engineer;%F0%9F%9A%80+Fullstack+Developer;%F0%9F%94%A5+Spring+Boot+%7C+Kafka+%7C+React" alt="Typing SVG" /></a>
 
 <br/>
